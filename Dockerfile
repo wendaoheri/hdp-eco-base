@@ -18,47 +18,47 @@ RUN chmod 600 /root/.ssh/config && \
 
 
 # download jdk
-RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz" && \
+RUN wget -b --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz" && \
     tar -xf jdk-8u191-linux-x64.tar.gz -C /opt && \
     ln -s /opt/jdk1.8.0_191 /opt/jdk && \
     rm -rf jdk-8u191-linux-x64.tar.gz
 
 # downlad scala
-RUN wget https://downloads.lightbend.com/scala/2.11.12/scala-2.11.12.tgz && \
+RUN wget -b https://downloads.lightbend.com/scala/2.11.12/scala-2.11.12.tgz && \
     tar -xf scala-2.11.12.tgz -C /opt && \
     ln -s /opt/scala-2.11.12 /opt/scala && \
     rm -rf scala-2.11.12.tgz
 
 # download hadoop
-RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz && \
+RUN wget -b https://archive.apache.org/dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz && \
     tar -xf hadoop-2.7.3.tar.gz -C /opt && \
     ln -s /opt/hadoop-2.7.3 /opt/hadoop && \
     rm -rf hadoop-2.7.3.tar.gz
 # download hive
-RUN wget https://archive.apache.org/dist/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz && \
+RUN wget -b https://archive.apache.org/dist/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz && \
     tar -xf apache-hive-1.2.2-bin.tar.gz -C /opt && \
     ln -s /opt/apache-hive-1.2.2-bin /opt/hive && \
     rm -rf apache-hive-1.2.2-bin.tar.gz
 # download hbase
-RUN wget https:/archive.apache.org/dist/hbase/hbase-1.2.8/hbase-1.2.8-bin.tar.gz && \
+RUN wget -b https:/archive.apache.org/dist/hbase/hbase-1.2.8/hbase-1.2.8-bin.tar.gz && \
     tar -xf hbase-1.2.8-bin.tar.gz -C /opt && \
     ln -s /opt/hbase-1.2.8-bin /opt/hbase && \
     rm -rf hbase-1.2.8-bin.tar.gz
 
 # download spark
-RUN wget https://archive.apache.org/dist/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz && \
+RUN wget -b https://archive.apache.org/dist/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz && \
     tar -xf spark-2.4.0-bin-hadoop2.7.tgz -C /opt && \
     ln -s /opt/spark-2.4.0-bin-hadoop2.7 /opt/spark && \
     rm -rf  spark-2.4.0-bin-hadoop2.7.tgz
 
 # download zookeeper
-RUN wget https://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.12.tar.gz && \
+RUN wget -b https://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.12.tar.gz && \
     tar -xf zookeeper-3.4.12.tar.gz -C /opt && \
     ln -s /opt/zookeeper-3.4.12 /opt/zookeeper && \
     rm -rf zookeeper-3.4.12.tar.gz
 
 # download spark
-RUN wget https://archive.apache.org/dist/kafka/2.1.0/kafka_2.11-2.1.0.tgz && \
+RUN wget -b https://archive.apache.org/dist/kafka/2.1.0/kafka_2.11-2.1.0.tgz && \
     tar -xf kafka_2.11-2.1.0.tgz -C /opt && \
     ln -s /opt/kafka_2.11-2.1.0 /opt/kafka && \
     rm -rf kafka_2.11-2.1.0.tgz
