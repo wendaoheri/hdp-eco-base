@@ -42,7 +42,7 @@ RUN wget -q https://archive.apache.org/dist/hive/hive-1.2.2/apache-hive-1.2.2-bi
 # download hbase
 RUN wget -q https://archive.apache.org/dist/hbase/1.2.7/hbase-1.2.7-bin.tar.gz && \
     tar -xf hbase-1.2.7-bin.tar.gz -C /opt && \
-    ln -s /opt/hbase-1.2.7-bin /opt/hbase && \
+    ln -s /opt/hbase-1.2.7 /opt/hbase && \
     rm -rf hbase-1.2.7-bin.tar.gz
 
 # download spark
