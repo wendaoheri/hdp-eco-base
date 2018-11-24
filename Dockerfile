@@ -62,3 +62,9 @@ RUN wget -q https://archive.apache.org/dist/kafka/2.1.0/kafka_2.11-2.1.0.tgz && 
     tar -xf kafka_2.11-2.1.0.tgz -C /opt && \
     ln -s /opt/kafka_2.11-2.1.0 /opt/kafka && \
     rm -rf kafka_2.11-2.1.0.tgz
+
+# download maven
+RUN wget -q https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz && \
+    tar -xf apache-maven-3.6.0-bin.tar.gz -C /opt && \
+    ln -s /opt/apache-maven-3.6.0-bin /opt/maven && \
+    rm -rf apache-maven-3.6.0-bin.tar.gz
