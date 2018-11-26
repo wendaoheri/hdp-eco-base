@@ -3,7 +3,7 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget
+RUN yum install -y openssh openssh-server openssh-clients wget which
 
 # config ssh 
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -P '' && \
@@ -68,6 +68,3 @@ RUN wget -q https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-
     tar -xf apache-maven-3.6.0-bin.tar.gz -C /opt && \
     ln -s /opt/apache-maven-3.6.0-bin /opt/maven && \
     rm -rf apache-maven-3.6.0-bin.tar.gz
-
-# add extra yum package
-RUN yum install -y which
