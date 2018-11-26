@@ -68,3 +68,6 @@ RUN wget -q https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-
     tar -xf apache-maven-3.6.0-bin.tar.gz -C /opt && \
     ln -s /opt/apache-maven-3.6.0-bin /opt/maven && \
     rm -rf apache-maven-3.6.0-bin.tar.gz
+
+# add extra yum package
+RUN yum install -y which
