@@ -57,7 +57,7 @@ RUN wget -q https://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.12.ta
     ln -s /opt/zookeeper-3.4.12 /opt/zookeeper && \
     rm -rf zookeeper-3.4.12.tar.gz
 
-# download spark
+# download kafka
 RUN wget -q https://archive.apache.org/dist/kafka/2.1.0/kafka_2.11-2.1.0.tgz && \
     tar -xf kafka_2.11-2.1.0.tgz -C /opt && \
     ln -s /opt/kafka_2.11-2.1.0 /opt/kafka && \
@@ -68,3 +68,15 @@ RUN wget -q https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-
     tar -xf apache-maven-3.6.0-bin.tar.gz -C /opt && \
     ln -s /opt/apache-maven-3.6.0-bin /opt/maven && \
     rm -rf apache-maven-3.6.0-bin.tar.gz
+
+# download alluxio
+RUN wget -q http://downloads.alluxio.org/downloads/files//1.8.1/alluxio-1.8.1-hadoop-2.7-bin.tar.gz && \
+    tar -xf alluxio-1.8.1-hadoop-2.7-bin.tar.gz -C /opt && \
+    ln -s /opt/alluxio-1.8.1-hadoop-2.7 /opt/alluxio && \
+    rm -rf alluxio-1.8.1-hadoop-2.7-bin.tar.gz
+
+# download phoenix
+RUN wget -q https://archive.apache.org/dist/phoenix/apache-phoenix-4.14.1-HBase-1.2/bin/apache-phoenix-4.14.1-HBase-1.2-bin.tar.gz && \
+    tar -xf apache-phoenix-4.14.1-HBase-1.2-bin.tar.gz -C /opt && \
+    ln -s /opt/apache-phoenix-4.14.1-HBase-1.2-bin /opt/phoenix && \
+    rm -rf apache-phoenix-4.14.1-HBase-1.2-bin.tar.gz
