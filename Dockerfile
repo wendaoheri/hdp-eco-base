@@ -3,7 +3,8 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget which
+RUN yum install -y openssh openssh-server openssh-clients wget which && \
+    yum clean all
 
 # config ssh 
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -P '' && \
