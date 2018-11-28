@@ -3,7 +3,7 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget which rsync && \
+RUN yum install -y openssh openssh-server openssh-clients wget which rsync supervisor && \
     yum clean all
 
 # config ssh 
