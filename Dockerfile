@@ -81,3 +81,9 @@ RUN wget -q https://archive.apache.org/dist/phoenix/apache-phoenix-4.14.1-HBase-
     tar -xf apache-phoenix-4.14.1-HBase-1.2-bin.tar.gz -C /opt && \
     ln -s /opt/apache-phoenix-4.14.1-HBase-1.2-bin /opt/phoenix && \
     rm -rf apache-phoenix-4.14.1-HBase-1.2-bin.tar.gz
+
+# download flink
+RUN wget -q https://archive.apache.org/dist/flink/flink-1.6.2/flink-1.6.2-bin-hadoop27-scala_2.11.tgz && \
+    tar -xf flink-1.6.2-bin-hadoop27-scala_2.11.tgz -C /opt && \
+    ln -s /opt/flink-1.6.2 /opt/flink && \
+    rm -rf flink-1.6.2-bin-hadoop27-scala_2.11.tgz
