@@ -3,7 +3,7 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools && \
+RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools git && \
     yum clean all
 RUN easy_install supervisor
 # config ssh 
@@ -87,3 +87,8 @@ RUN wget -q https://archive.apache.org/dist/flink/flink-1.6.2/flink-1.6.2-bin-ha
     tar -xf flink-1.6.2-bin-hadoop27-scala_2.11.tgz -C /opt && \
     ln -s /opt/flink-1.6.2 /opt/flink && \
     rm -rf flink-1.6.2-bin-hadoop27-scala_2.11.tgz
+
+# download typesafe activator
+RUN wget -q https://downloads.typesafe.com/typesafe-activator/1.3.12/typesafe-activator-1.3.12.zip && \
+    unzip -d /opt typesafe-activator-1.3.12.zip && \
+    rm -rf typesafe-activator-1.3.12.zip
