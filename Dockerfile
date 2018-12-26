@@ -3,7 +3,7 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools git && \
+RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools git npm zip unzip && \
     yum clean all
 RUN easy_install supervisor
 # config ssh 
@@ -91,4 +91,5 @@ RUN wget -q https://archive.apache.org/dist/flink/flink-1.6.2/flink-1.6.2-bin-ha
 # download typesafe activator
 RUN wget -q https://downloads.typesafe.com/typesafe-activator/1.3.12/typesafe-activator-1.3.12.zip && \
     unzip -d /opt typesafe-activator-1.3.12.zip && \
+    ln -s /opt/activator-dist-1.3.12 /opt/activator && \
     rm -rf typesafe-activator-1.3.12.zip
