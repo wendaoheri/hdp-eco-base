@@ -3,7 +3,7 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools git zip unzip nodejs && \
+RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools git zip unzip && \
     yum clean all
 RUN easy_install supervisor
 # config ssh 
