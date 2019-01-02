@@ -101,3 +101,8 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 
 ## install inspyred
 RUN pip install inspyred
+
+# install nodejs
+RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - && \
+    yum install -y nodejs && \
+    yum clean all
