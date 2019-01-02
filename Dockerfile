@@ -93,3 +93,11 @@ RUN wget -q https://downloads.typesafe.com/typesafe-activator/1.3.12/typesafe-ac
     unzip -d /opt typesafe-activator-1.3.12.zip && \
     ln -s /opt/activator-dist-1.3.12 /opt/activator && \
     rm -rf typesafe-activator-1.3.12.zip
+
+# install pip
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python get-pip.py && \
+    rm -rf get-pip.py
+
+## install inspyred
+RUN pip install inspyred
