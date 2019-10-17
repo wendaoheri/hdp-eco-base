@@ -18,6 +18,6 @@ RUN chmod 600 /root/.ssh/config && \
     chown root:root /root/.ssh/config
 
 
-RUN wget -q --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "https://download.oracle.com/otn/java/jdk/8u231-b11/5b13a193868b4bf28bcb45c792fce896/jdk-8u231-linux-x64.rpm" && \
+RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn/java/jdk/8u231-b11/5b13a193868b4bf28bcb45c792fce896/jdk-8u231-linux-x64.rpm?AuthParam=1571307866_6d0e3e7aaced850887b9efd395607ea9 && \
     rpm -ivh jdk-8u231-linux-x64.rpm && \
     rm -rf jdk-8u231-linux-x64.rpm
