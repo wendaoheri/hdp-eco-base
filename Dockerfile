@@ -30,7 +30,6 @@ ENV JAVA_HOME /usr/java/latest
 
 RUN wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && \
     rpm -ivh mysql-community-release-el7-5.noarch.rpm && \
-    yum update && \
     yum install -y mysql-server
 
 ADD config/my.cnf /etc/my.cnf
