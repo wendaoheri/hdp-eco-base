@@ -25,3 +25,8 @@ RUN wget -q https://forensics.cert.org/centos/cert/7/x86_64/jdk-8u221-linux-x64.
 ENV JAVA_HOME /usr/java/latest
 
 RUN yum clean all
+
+ADD config/supervisord.conf /etc/
+ADD conf/supervisor.d /etc/
+
+ENTRYPOINT [ "supervisord", "-c" , "/etc/supervisord.conf" ]
