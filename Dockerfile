@@ -27,6 +27,6 @@ ENV JAVA_HOME /usr/java/latest
 RUN yum clean all
 
 ADD config/supervisord.conf /etc/
-ADD conf/supervisor.d /etc/
+ADD config/supervisor.d /etc/
 
 ENTRYPOINT [ "supervisord", "-c" , "/etc/supervisord.conf" ]
