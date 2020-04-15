@@ -17,12 +17,10 @@ ADD config/ssh_config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config && \
     chown root:root /root/.ssh/config
 
-
+# install jdk
 RUN wget -q https://forensics.cert.org/centos/cert/7/x86_64/jdk-8u221-linux-x64.rpm && \
     rpm -ivh jdk-8u221-linux-x64.rpm && \
     rm -rf jdk-8u221-linux-x64.rpm
-
-RUN wget -q -O /etc/yum.repos.d/cloudera-cdh5.repo https://archive.cloudera.com/cdh5/redhat/7/x86_64/cdh/cloudera-cdh5.repo
 
 ENV JAVA_HOME /usr/java/latest
 
