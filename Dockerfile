@@ -26,12 +26,4 @@ RUN wget -q -O /etc/yum.repos.d/cloudera-cdh5.repo https://archive.cloudera.com/
 
 ENV JAVA_HOME /usr/java/latest
 
-# install mysql
-
-RUN wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && \
-    rpm -ivh mysql-community-release-el7-5.noarch.rpm && \
-    yum install -y mysql-server
-
-ADD config/my.cnf /etc/my.cnf
-
 RUN yum clean all
