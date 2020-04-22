@@ -27,6 +27,7 @@ ENV JAVA_HOME /usr/java/latest
 RUN yum clean all
 
 COPY config/supervisord.conf /etc/
+COPY config/supervisord-manager.conf /etc/
 COPY config/supervisor.d/* /etc/supervisor.d/
 
 EXPOSE 22 9001
