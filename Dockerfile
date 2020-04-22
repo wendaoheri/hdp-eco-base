@@ -29,6 +29,9 @@ RUN yum clean all
 COPY config/supervisord.conf /etc/
 COPY config/supervisord-manager.conf /etc/
 COPY config/supervisor.d/* /etc/supervisor.d/
+COPY wait-for-it.sh /
+
+RUN chmod +x /wait-for-it.sh
 
 EXPOSE 22 9001
 
