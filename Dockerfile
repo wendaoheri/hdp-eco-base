@@ -27,7 +27,6 @@ ENV JAVA_HOME /usr/java/latest
 RUN yum clean all
 
 COPY config/supervisord.conf /etc/
-COPY config/supervisord-manager.conf /etc/
 COPY config/supervisor.d/* /etc/supervisor.d/
 COPY wait-for-it.sh /
 
