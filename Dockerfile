@@ -31,6 +31,7 @@ COPY config/supervisor.d/* /etc/supervisor.d/
 COPY wait-for-it.sh /
 
 RUN chmod +x /wait-for-it.sh
+RUN mkdir -p /var/log/supervisor/
 
 EXPOSE 22 9001
 
