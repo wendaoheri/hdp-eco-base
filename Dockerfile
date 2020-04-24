@@ -3,9 +3,9 @@ FROM centos:centos7
 USER root
 
 # install required software
-RUN yum install -y openssh openssh-server openssh-clients wget which rsync python-setuptools git zip unzip ntp vim sudo
+RUN yum install -y openssh openssh-server openssh-clients wget which rsync python3 python3-setuptools git zip unzip ntp vim sudo
     
-RUN easy_install supervisor
+RUN pip3 install supervisor
 # config ssh 
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -P '' && \
     ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -P '' && \
