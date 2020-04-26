@@ -24,6 +24,14 @@ RUN wget -q https://forensics.cert.org/centos/cert/7/x86_64/jdk-8u221-linux-x64.
 
 ENV JAVA_HOME /usr/java/latest
 
+RUN wget -q https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz && \
+    tar -xf apache-maven-3.6.3-bin.tar.gz -C /usr/lib && \
+    ln -s /usr/lib/apache-maven-3.6.3 /usr/lib/maven && \
+    rm -rf apache-maven-3.6.3-bin.tar.gz
+
+ENV M2_HOME /usr/lib/maven
+ENV PATH ${M2_HOME}/bin:${PATH}
+
 RUN yum clean all
 
 COPY config/supervisord.conf /etc/
